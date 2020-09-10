@@ -1,7 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
-id -nG
-=======
 sudo id -nG
-
->>>>>>> 33d0d1d76e886b432e31c5e93413d478f189bdc1
