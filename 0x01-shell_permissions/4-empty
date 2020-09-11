@@ -1,6 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
-touch hello
-=======
 sudo touch hello
->>>>>>> 33d0d1d76e886b432e31c5e93413d478f189bdc1
