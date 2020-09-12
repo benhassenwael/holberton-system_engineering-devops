@@ -1,0 +1,8 @@
+total 12
+drwxrwxr-x 2 vagrant vagrant 4096 Sep 12 15:11 .
+drwxrwxr-x 3 vagrant vagrant 4096 Sep 12 15:02 ..
+-rwxrw-r-- 1 vagrant vagrant   36 Sep 12 15:11 8-cwd_state
+-rw-rw-r-- 1 vagrant vagrant    0 Sep 12 14:53 \*\'"Holberton School"\'\*$\?\*\*\*\*\*:)
+-rw-rw-r-- 1 vagrant vagrant    0 Sep 12 14:58 \*\\'"Holberton School"\'\\*$\?\*\*\*\*\*:)
+-rw-rw-r-- 1 vagrant vagrant    0 Sep 12 15:12 ls_cwd_content
+-rw-rw-r-- 1 vagrant vagrant    0 Sep 12 15:12 ls_cwd_content
