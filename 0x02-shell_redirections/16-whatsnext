@@ -1,2 +1,2 @@
 #!/bin/bash
-grp -A 3 'rot'
+grep -iA 3 "root"
