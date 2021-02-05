@@ -1,15 +1,14 @@
 #!/usr/bin/env bash
 #displaying "Holberton School" 10 times
 
-i="0"
+i="1"
 
-while [ $i -lt 10 ]
+while [ $i -le 10 ]
 do
-	if [ $i -eq 8 ]
+	echo Holberton School
+	if [ $i -eq 9 ]
 	then
 		echo Hi
-	else
-		echo Holberton School
 	fi
 	i=$((i+1))
 done

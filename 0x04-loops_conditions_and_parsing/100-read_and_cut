@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+FILENAME="/etc/passwd"
+while IFS= read -r
+do
+	cut -d ':' -f1,4,6
+done < $FILENAME
