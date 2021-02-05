@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#display the content of /etc/passwd
 
 FILENAME="/etc/passwd"
 while IFS= read -r
