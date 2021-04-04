@@ -1,5 +1,4 @@
 # making changes to config file to allow ssh connection
-# without typing a password
 
 file_line { 'Turn off passwd auth':
   path    => '/etc/ssh/ssh_config',
