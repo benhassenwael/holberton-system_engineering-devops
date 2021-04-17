@@ -21,7 +21,7 @@ exec { 'apt update':
   content => 'server {
         listen 80 default_server;
         listen [::]:80 default_server;
-        add_header X-Serverd-By $HOSTNAME;
+        add_header X-Served-By $HOSTNAME;
         root /var/www/html;
         index index.html;
         server_name _;
