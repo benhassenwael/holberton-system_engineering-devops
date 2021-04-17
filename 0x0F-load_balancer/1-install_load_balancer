@@ -15,14 +15,18 @@ then
 	echo "Failed to install HAproxy" 1>&2
 	exit 1
 fi
-echo -e \
-"\nlisten load_balancer
-\tbind :80
-\tmode http
-\tstats enable
-\tstats uri /haproxy?stats
-\tbalance roundrobin
-\tserver 2244-web-01 35.196.157.89:80 check
-\tserver 2244-web-02 104.196.22.43:80 check" \
-    >> /etc/haproxy/haproxy.cfg
+
+echo "ENABLED=1" >> /etc/default/haproxy
+
+echo "
+frontend load_balancer
+    bind *:80
+    mode http
+    default_backend webserver
+backend webserver
+    balance roundrobin
+    server 2244-web-01 35.196.157.89:80 check
+    server 2244-web-02 104.196.22.43:80 check
+" >> /etc/haproxy/haproxy.cfg
+
 service haproxy restart
