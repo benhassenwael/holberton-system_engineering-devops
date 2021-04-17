@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 # Install HAproxy on clean ubuntu 14.04 machine and setup to proxy requests
+# shellcheck disable=SC2016
 
 apt-get update -y
 
-if ! apt-get install -y --no-install-recommends software-properties-common && \
-add-apt-repository ppa:vbernat/haproxy-2.3;
+if ! apt-get install -y software-properties-common && \
+add-apt-repository ppa:vbernat/haproxy-2.0;
 then
 	echo "Failed in enabling a dedicated PPA" 1>&2
 	exit 1
 fi
 
-if ! apt-get install -y haproxy;
+if ! apt-get install -y haproxy=2.0.\*;
 then
 	echo "Failed to install HAproxy" 1>&2
 	exit 1
