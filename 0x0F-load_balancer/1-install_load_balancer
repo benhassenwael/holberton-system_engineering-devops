@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Install HAproxy on clean ubuntu 14.04 machine and setup to proxy requests
+
+apt-get update -y
+
+if ! apt-get install -y --no-install-recommends software-properties-common && \
+add-apt-repository ppa:vbernat/haproxy-2.3;
+then
+	echo "Failed in enabling a dedicated PPA" 1>&2
+	exit 1
+fi
+
+if ! apt-get install -y haproxy;
+then
+	echo "Failed to install HAproxy" 1>&2
+	exit 1
+fi
+echo -e \
+"\nlisten load_balancer
+\tbind :80
+\tmode http
+\tstats enable
+\tstats uri /haproxy?stats
+\tbalance roundrobin
+\tserver 2244-web-01 35.196.157.89:80 check
+\tserver 2244-web-02 104.196.22.43:80 check" \
+    >> /etc/haproxy/haproxy.cfg
+service haproxy restart
