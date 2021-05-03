@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     data = {user_id: [dict(task=todo.get('title'),
                            completed=todo.get('completed'),
-                           username=username)
+                           username=name)
                       for todo in todos]}
     with open("{}.json".format(user_id), 'w') as f:
         json.dump(data, f)
