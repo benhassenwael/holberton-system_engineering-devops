@@ -4,18 +4,10 @@
 
 apt-get update -y
 
-if ! apt-get install -y software-properties-common && \
-add-apt-repository ppa:vbernat/haproxy-2.0;
-then
-	echo "Failed in enabling a dedicated PPA" 1>&2
-	exit 1
-fi
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.0
 
-if ! apt-get install -y haproxy=2.0.\*;
-then
-	echo "Failed to install HAproxy" 1>&2
-	exit 1
-fi
+apt-get install -y haproxy=2.0.\*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 
