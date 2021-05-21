@@ -24,7 +24,7 @@ def get_user_name(user_id):
     try:
         user = requests.get(user_api + user_id)
         user.raise_for_status()
-        return user.json().get('name')
+        return user.json().get('username')
     except requests.exceptions.RequestException as e:
         raise SystemExit(e)
 
